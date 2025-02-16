@@ -51,3 +51,14 @@ sudo apt install gnome-software gnome-software-plugin-flatpak gnome-software-plu
 # Instalar KDE Connect
 sudo apt install kdeconnect
 
+# Instalar OpenSSH
+sudo apt install openssh-server
+
+# Verificar status do serviço SSH
+sudo systemctl status ssh
+
+# Iniciar o serviço SSH se necessário
+sudo systemctl start ssh
+
+# Habilitar o SSH para iniciar automaticamente com o sistema
+sudo systemctl enable ssh
