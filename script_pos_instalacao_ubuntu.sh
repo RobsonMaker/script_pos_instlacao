@@ -1,58 +1,59 @@
 #!/bin/bash
 
 # Atualizar lista de pacotes
-sudo apt update
+sudo apt update -y
 
 # Instalar MariaDB
-sudo apt install mariadb-server
+sudo apt install mariadb-server -y
 
 # Instalar MySQL Workbench
-sudo apt install mysql-workbench
+sudo apt install mysql-workbench -y
 
 # Instalar Visual Studio Code
-sudo snap install --classic code
+sudo snap install --classic code -y
 
 # Instalar NetBeans
-sudo snap install netbeans --classic
+sudo snap install netbeans --classic -y
 
 # Instalar Java JDK
-sudo apt install default-jdk
+sudo apt install default-jdk -y
 
 # Instalar GRASS GIS
-sudo apt install grass
+sudo apt install grass -y
 
 # Instalar PyCharm Professional
-sudo snap install pycharm-professional --classic
+sudo snap install pycharm-professional --classic -y
 
 # Instalar Google Chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt --fix-broken install -y
 
 # Instalar Microsoft Edge
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" | sudo tee /etc/apt/sources.list.d/microsoft-edge-dev.list
 sudo rm microsoft.gpg
-sudo apt update
-sudo apt install microsoft-edge-dev
+sudo apt update -y
+sudo apt install microsoft-edge-dev -y
 
 # Instalar GParted
-sudo apt install gparted
+sudo apt install gparted -y
 
 # Instalar VIM
-sudo apt install vim
+sudo apt install vim -y
 
 # Instalar Git
-sudo apt install git
+sudo apt install git -y
 
 # Instalar Gnome Software
-sudo apt install gnome-software gnome-software-plugin-flatpak gnome-software-plugin-snap
+sudo apt install gnome-software gnome-software-plugin-flatpak gnome-software-plugin-snap -y
 
 # Instalar KDE Connect
-sudo apt install kdeconnect
+sudo apt install kdeconnect -y
 
 # Instalar OpenSSH
-sudo apt install openssh-server
+sudo apt install openssh-server -y
 
 # Verificar status do serviço SSH
 sudo systemctl status ssh
@@ -62,3 +63,10 @@ sudo systemctl start ssh
 
 # Habilitar o SSH para iniciar automaticamente com o sistema
 sudo systemctl enable ssh
+
+# Instalar DuckDuckGo Privacy Essentials no Google Chrome
+google-chrome-stable --install-extension=duckduckgo
+
+# Instalar DuckDuckGo Privacy Essentials no Mozilla Firefox
+firefox -install-global-extension https://addons.mozilla.org/firefox/downloads/file/3555357/duckduckgo_privacy_essentials-2022.10.3-an+fx.xpi
+
