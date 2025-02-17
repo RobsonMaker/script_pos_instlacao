@@ -46,6 +46,11 @@ sudo apt install vim -y
 # Instalar Git
 sudo apt install git -y
 
+# Configuração do Git
+git config --global user.name "Seu Nome"
+git config --global user.email "seu_email@example.com"
+git config --list
+
 # Instalar Gnome Software
 sudo apt install gnome-software gnome-software-plugin-flatpak gnome-software-plugin-snap -y
 
@@ -54,6 +59,9 @@ sudo apt install kdeconnect -y
 
 # Instalar OpenSSH
 sudo apt install openssh-server -y
+
+# Gerar chave SSH
+ssh-keygen -t rsa -b 4096 -C "seu_email@example.com" -f ~/.ssh/id_rsa -N ""
 
 # Verificar status do serviço SSH
 sudo systemctl status ssh
